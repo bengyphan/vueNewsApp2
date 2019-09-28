@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container-fluid">
+  <div id="app" class="container-fluid p-5 pt-1">
     <div class="row">
       <app-search v-on:newsChanged="getNews"></app-search>
     </div>
@@ -47,7 +47,6 @@ export default {
           return response.json();
         })
         .then(function(data) {
-          console.log(data);
           that.articles = data.articles;
         })
         
