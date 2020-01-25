@@ -1,12 +1,21 @@
 <template>
     <div class="col-4">
-        <img 
-        class="img-fluid"
-        v-bind:src="data.urlToImage" 
-        v-bind:alt="data.title">
-        <h4 >{{ limitChar(data.title) }}</h4>
-        <h6>{{ data.author }} | {{ data.source.name }}</h6>
-        <p>{{ limitChar(data.description) }}</p>
+        <b-card
+            v-bind:img-src="data.urlToImage"
+            v-bind:img-alt="data.title"
+            img-top
+            tag="article"
+            style="max-width: 20rem;"
+            class="mb-2"
+        >
+            <b-card-title>{{ limitChar(data.title) }}</b-card-title>
+            <b-card-sub-title>{{ data.author }} | {{ data.source.name }}</b-card-sub-title>
+            <b-card-text>
+            {{ limitChar(data.description) }}
+            </b-card-text>
+
+            <b-button v-bind:href="data.url" variant="primary">View Article</b-button>
+        </b-card>
     </div>
 </template>
 

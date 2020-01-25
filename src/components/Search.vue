@@ -1,8 +1,8 @@
 <template>
     <div>
         <input type="text" placeholder="SEARCH"
-        v-model="searchQ"
-        @change.lazy="changeNews">
+        v-model.lazy ="searchQ"
+        @change="changeNews">
         <!-- <button v-on:click="changeNews">Submit</button> -->
     </div>
 </template>

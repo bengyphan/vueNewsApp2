@@ -3,18 +3,16 @@
     <div class="row">
       <app-search v-on:newsChanged="getNews"></app-search>
     </div>
-    <div>
-      <label for="title">Title</label>
-      <input type="radio" id="title" value="title"
-        v-model="sortCriteria">
-      <br>
-      <label for="author">Author</label>
-      <input type="radio" id="author" value="author"
-        v-model="sortCriteria">
+    <div class="row">
+      <b-form-group label="Sort By" stacked>
+        <b-form-radio v-model="sortCriteria" name="some-radios" value="title">Title</b-form-radio>
+        <b-form-radio v-model="sortCriteria" name="some-radios" value="author">Author</b-form-radio>
+      </b-form-group>
     </div>
     <div class="row">
       <app-article
         v-for="newsArticle in sortedArticles"
+        v-bind:key="newsArticle.id"
         v-bind:data="newsArticle">
       </app-article>
     </div>
